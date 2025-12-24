@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# react-lab 🧪
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 성능 최적화와 렌더링 동작을 실험·분석하는 개인 연구용 프로젝트입니다.
 
-Currently, two official plugins are available:
+이 저장소는 React의 내부 동작을 이해하고,  
+불필요한 렌더링을 줄이기 위한 다양한 패턴과 실험을 기록하기 위해 만들어졌습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 목적 (Why react-lab?)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 렌더링 구조를 **이론이 아닌 실험으로 이해**
+- 성능 이슈가 발생하는 상황을 직접 재현하고 분석
+- 실무에서 자주 쓰이는 최적화 기법들의 **효과와 한계 검증**
+- 단순 예제가 아닌, **의도와 결과가 남는 실험 기록** 축적
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧪 실험 주제 (진행 중)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 렌더링 흐름과 상태 변경 영향
+- `React.memo`, `useMemo`, `useCallback` 비교 실험
+- 불필요한 리렌더링 발생 조건 분석
+- 리스트 렌더링 성능 비교
+- 상태 위치에 따른 렌더링 범위 차이
+- (예정) batching, virtualization, suspense 실험
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+> 각 실험은 코드 + 결과 + 인사이트 형태로 정리합니다.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ 기술 스택
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React
+- TypeScript
+- Vite
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 📂 프로젝트 구조 (예정)# react-lab 🧪
+
+React 성능 최적화와 렌더링 동작을 실험·분석하는 개인 연구용 프로젝트입니다.
+
+이 저장소는 React의 내부 동작을 이해하고,  
+불필요한 렌더링을 줄이기 위한 다양한 패턴과 실험을 기록하기 위해 만들어졌습니다.
+
+---
+
+## 🎯 목적 (Why react-lab?)
+
+- React 렌더링 구조를 **이론이 아닌 실험으로 이해**
+- 성능 이슈가 발생하는 상황을 직접 재현하고 분석
+- 실무에서 자주 쓰이는 최적화 기법들의 **효과와 한계 검증**
+- 단순 예제가 아닌, **의도와 결과가 남는 실험 기록** 축적
+
+---
+
+## 🧪 실험 주제 (진행 중)
+
+- React 렌더링 흐름과 상태 변경 영향
+- `React.memo`, `useMemo`, `useCallback` 비교 실험
+- 불필요한 리렌더링 발생 조건 분석
+- 리스트 렌더링 성능 비교
+- 상태 위치에 따른 렌더링 범위 차이
+- (예정) batching, virtualization, suspense 실험
+
+> 각 실험은 코드 + 결과 + 인사이트 형태로 정리합니다.
+
+---
+
+## 🛠️ 기술 스택
+
+- React
+- TypeScript
+- Vite
+
+---
+
+## 📂 프로젝트 구조 (예정)
+
+react-lab
+├─ experiments/ # 성능 실험 코드
+├─ components/ # 공통 컴포넌트
+├─ notes/ # 실험 결과 및 인사이트 정리
+└─ README.md
+
+---
+
+## 📝 기록 방식
+
+- **실험 목적**
+- **실험 코드**
+- **관찰 결과**
+- **정리 및 인사이트**
+
+위 흐름을 기준으로 실험을 누적합니다.
+
+---
+
+## 🚧 참고 사항
+
+- 학습용 예제가 아닌 **개인 연구 목적의 실험 저장소**입니다.
+- 실험 과정에서 의도적으로 비효율적인 코드가 포함될 수 있습니다.
+
+---
+
+## 📌 Author
+
+- 개인 프로젝트
+- React 렌더링과 성능 최적화에 대한 지속적인 실험 기록
