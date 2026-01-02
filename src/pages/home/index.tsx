@@ -1,7 +1,7 @@
 // src/pages/home/index.tsx
 import { mockPosts } from "../../entities/post/model/mockData";
 import { Layout } from "../../shared/ui/Layout";
-import { PostCard } from "../../shared/ui/PostCard";
+import { PostCard } from "../../entities/post/ui/PostCard";
 
 export const HomePage = () => {
   return (
