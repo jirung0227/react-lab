@@ -1,7 +1,7 @@
 // src/shared/ui/Layout/index.tsx
 import type { ReactNode } from "react";
-import { Header } from "../Header";
-import { Footer } from "../Footer";
+import { Header } from "@/shared/ui/Header";
+import { Footer } from "@/shared/ui/Footer";
 
 interface LayoutProps {
   children: ReactNode;
